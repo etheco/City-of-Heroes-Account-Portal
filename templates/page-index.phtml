@@ -9,8 +9,14 @@
     </div>
     <div class="blockbody">
         <p>This City of Heroes private server was created for friends to play together in a fun atmosphere.</p>
+       
+        {% if status.status == 'Online'  %}
+            <p>Server started on {{status.started}}, running for {{status.uptime}}</p>
+        {% else %}
+            <p>Server is currently down.</p>
+        {% endif %}
+
         <p>There are {{accounts}}  registered accounts holding {{characters}} characters.</p>
-        <p><span style="color: bright-red;">{{online}}</span> players are online.</p>
     </div>
 </div>
 
